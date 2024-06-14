@@ -1,0 +1,57 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+    margin: 0 2em 0 2em;
+}
+
+.header {
+    width: 100%;
+    padding: 30px 0 30px 0;
+    text-align: center;
+    background: #004346;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+.header p {
+    font-size: 24px;
+    color: white;
+}
+
+.header h1 {
+    padding: 0, 5em 0 0.5em 0;
+    font-size: 48px;
+    color: #75DDDD;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0 20px 0;
+    background-color: #172A3A;
+    grid-area: footer;
+}
+
+footer a {
+    color: #09BC8A;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+img {
+    width: 40%;
+}
+
+h2 {
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+p {
+    font-family: Courier, monospace;
+}
