@@ -8,6 +8,34 @@ body {
     flex-direction: column;
 }
 
+button {
+    border: none;
+    color: whiteblack;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+.hover-button {
+    background-color: #75DDDD;
+}
+
+.hover-button:hover {
+    background-color: #407e7e;
+    color: white;
+}
+
+.table-of-contents {
+    float: left;
+    padding-left: 0.5em;
+}
+
 .content {
     flex: 1 0 auto;
     margin: 0 2em 0 2em;
@@ -46,12 +74,15 @@ footer a {
 
 img {
     width: 40%;
+    float: left;
+    padding: 0 1.5em 1em 0;
 }
 
 h2 {
     font-family: "Lucida Console", Courier, monospace;
 }
 
-p {
+p,
+li {
     font-family: Courier, monospace;
 }
