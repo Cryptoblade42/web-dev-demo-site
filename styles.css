@@ -60,6 +60,24 @@ button {
     color: #75DDDD;
 }
 
+input {
+    font-size: 12pt;
+	line-height: 1.75em;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	text-align: left;
+	width: 400px;
+	line-height: 26px; 
+	margin-bottom: 0.5em;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+
 footer {
     text-align: center;
     padding: 20px 0 20px 0;
@@ -83,6 +101,7 @@ h2 {
 }
 
 p,
-li {
+li
+{
     font-family: Courier, monospace;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>JavaScript Example</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What is JavaScript (JS)?</h2>
+        <p>JavaScript is a programming language commonly used in web development. Often, you will see it written as 'JS'
+            for short. It can be used for many different things, such as the creation of dynamic websites, animations
+            and data manipulation. It can also be used by web security specialists, who often write payloads for
+            websites in JavaScript.</p>
+
+        <h2>My First JS Script</h2>
+        <label for="name">Enter your name:</label>
+        <input id="name">
+
+        <p id="output"></p>
+
+        <br>
+        <br>
+        <button class="button hover-button" onclick="generateCompliment()">Compliment me!</button>
+        <br>
+        <script>
+            function generateCompliment() { // This is the name of our function: Everything between the {} will be part of the function. The () denotes it as a function
+                // We need to take the name from the 'name' input box, which we gave an id of 'name'
+                // We store it in a variable called nameInput, so we can insert it into our compliments later
+                let nameInput = document.querySelector("#name");
+
+                // Now, we create an 'array' of compliments- essentially a list of compliments
+                // Each one is enclosed in "" and is separated by a comma
+                // Everything is enclosed by the []
+                // You can add however many compliments as you want, and you can change them- just keep the format roughly the same
+                var compliments = [
+                    "You look great today!",
+                    "On a scale of 1-10, you're a solid 11!",
+                    "You have a pretty smile :)",
+                    "Your sense of humour can cheer anyone up.",
+                    "You're going to ace that next assignment!",
+                    "Even Keanu Reeves would say you're breathtaking!",
+                    "You must be CSS, since you've got class and style."
+                ];
+
+                // Now, we choose a random compliment, by choosing a random number which will correspond to one of the compliments
+                // Then, we can 'append' a quick greeting and the name of the user by using +
+                let compliment = "Hey, " + nameInput.value + "! " + compliments[getRandomNumber(compliments.length)];
+            
+                output.innerHTML = compliment;
+            }
+
+            // Here is our 'random number generator', which we will use to randomly choose a compliment
+            function getRandomNumber(numberOfCompliments) {
+                return Math.floor(Math.random() * numberOfCompliments);
+            }
+        </script>
+
+        <a href="index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
