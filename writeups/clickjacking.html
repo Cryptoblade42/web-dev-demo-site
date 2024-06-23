@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>Clickjacking</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What is Clickjacking?</h2>
+        <p>Clickjacking is the process of tricking a user into performing an action, such as clicking on a button, by
+            disguising what they're actually doing. This is done by creating a 'mask' which is placed 'on top of' the
+            original website, so the user doesn't know what they're actually clicking on. It's commonly used alongside
+            social engineering attacks, like phishing.</p>
+
+        <h2>How Can You Prevent Clickjacking?</h2>
+        <p>There are a few ways to protect against clickjacking, beyond 'not clicking on suspicious things'. The main
+            idea is to prevent the website from being 'framed', i.e. it cannot be placed underneath a mask using an
+            iframe. This can be achieved by configuring the X-Frame-Options header, using a strict CSP, implementing
+            SameSite cookies and/or implementing a frame buster script. Naturally, these techniques are not fool-proof,
+            and can be bypassed if not correctly implemented.</p>
+
+        <a href="/index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
