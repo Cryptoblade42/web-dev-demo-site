@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>SQL Injection</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What are Databases? What is SQL?</h2>
+        <p>A database is simply an ordered collection of data stored in a 'table'. SQL is the language used to retrieve
+            information from that table using 'queries'. There are different versions of SQL (ignoring NoSQL and
+            non-relational databases) and while the syntax is slightly different, the overall idea is the same.</p>
+
+        <h2>What is SQLi?</h2>
+        <p>SQLi, short for SQL Injection, is the process of creating malicious queries, which can be 'injected' into a
+            database, causing unintended behaviour. For example, SQLi can be used to bypass a login page, or to retrieve
+            hidden data about other users. It is a reasonably common attack, despite how well-known it is. Nevertheless,
+            there are a few good ways to defend against SQLi, such as the use of prepared statements and parameterised
+            queries.</p>
+
+        <h2>What are Some Common SQLi Payloads?</h2>
+        <p>Because of the nature of SQLi, there are usually a few common payloads which can be quickly used to test if a
+            website is vulnerable. Here are some examples:</p>
+        <ul>
+            <li><b>[username]'--</b> can be used to bypass a login page by forcing the database to ignore the password
+                check (since it is commented out by the '--'). It can be injected into the username field, with a known
+                username. </li>
+            <li><b>‘OR 1=1--</b> can be used to bypass either a catalogue filter or a login page, depending where it is
+                injected. Essentially, this command will replace a given parameter (or add one, should one not exist
+                already) with a condition that is <i>always true</i>. This essentially eliminates the condition, as the
+                query will boil down to 'do something if [condition is true] or [1=1 is true]'. Since the latter is
+                always true, the 'something' will always execute. In the context of a catalogue, this means we can
+                eliminate any other filter (e.g. 'search only for released items') and for login pages, we can insert
+                this instead of a password (i.e. 'login if we have username X and 1=1').</li>
+            <li><b>'UNION SELECT NULL--</b> is used for more advanced UNION-based attacks. This command is used to
+                enumerate the number of columns in a table, because in a UNION attack, the number of columns must always
+                match. We can then keep adding NULLs (i.e. we would write 'UNION SELECT NULL, NULL-- and then 'UNION
+                SELECT NULL, NULL, NULL--) until we don't get an error- then we know we have the length (number of
+                NULLs). Alternatively,
+                we can replace a NULL with a random string/number to determine the type of data stored in that column.
+                E.g. if we replace one NULL with 'abc' (a string) and don't get an error, then we know that that column
+                will contain strings.</li>
+            <li><b>'UNION SELECT [column_name], [optional_second_column] FROM [table_name]--</b> is a payload used to
+                retrieve data using a UNION attack. Essentially, once we have the number of columns, we can insert the
+                correct number of columns (assuming we have the names of the columns we want) and then we can get the
+                information we want.</li>
+        </ul>
+        <a href="/index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
