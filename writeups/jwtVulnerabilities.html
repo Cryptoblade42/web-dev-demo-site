@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>JWT Vulnerabilities</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What are JWTs?</h2>
+        <p>JSON web tokens, or JWTs for short (pronounced 'jort' or 'jot'), are signed tokens that can be used to store
+            data. This data can then be sent securely between parties. For example, it might contain a user's name and
+            their unique id number. Their security comes from the fact that they are signed with a secret, using some
+            algorithm. If the signature doesn't match, the token is invalid. Any time a change is made to the header or
+            the payload of the token, the signature must be correctly updated. This is why an attacker cannot simply
+            tamper with or modify a JWT in the same way that they can just change a cookie.</p>
+
+        <h2>What are Some JWT Vulnerabilities?</h2>
+        <p>Hypothetically, JWTs aren't vulnerable: If you don't have the secret, you can't sign the token correctly and
+            it'll be rejected. However, JWTs, or the systems that check their integirty, can be implemented poorly,
+            making them exploitable. For example, the system may not actually check the signature's correctness, nor
+            might it check for the presence of an algorithm with which to check the signature. In more complex cases, an
+            attacker can cause a site to sign tokens with their own secrets/keys, using JWT header injections, allowing them
+            to modify the tokens and re-sign them correctly.</p>
+        <a href="/index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
