@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>Cross-Site Request Forgery</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What is Cross-Site Request Forgery (CSRF)?</h2>
+        <p>CSRF attacks are a close cousin of XSS attacks, but rather than injecting arbitrary code, a CSRF attack
+            allows an attacker to 'hijack' a user's actions. That is to say, an attacker can induce a user into
+            performing an action that the user did not intend to perform. An example of this is an attacker inducing a
+            user into changing their email into the attacker's email instead. CSRF attacks are generally less dangerous
+            than XSS attacks, due to the fact that their scope is inherently limited to actions that their target victim
+            can perform. The more privileged a victim is (i.e. can do 'more things'), the more damaging a CSRF attack
+            can be.</p>
+
+        <h2>How can CSRF attacks Be Prevented?</h2>
+        <p>Fortunately, CSRF defence mechanisms are usually quite robust, if implemented correctly. Some such mechanisms
+            are the use of SameSite Cookies, CSRF tokens and multi-step actions.</p>
+        <a href="/index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
