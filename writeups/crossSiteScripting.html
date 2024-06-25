@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles.css" rel='stylesheet'>
+    <title>Demo Site</title>
+</head>
+
+<body>
+    <section class="header">
+        <h1>Cross-Site Scripting</h1>
+        <p>Made by Sarah</p>
+    </section>
+
+    <div class="content">
+        <h2>What is Cross-Site Scripting (XSS)?</h2>
+        <p>XSS is a common class of vulnerabilities that allows an attacker to inject arbitrary code into a victim's
+            webpage. There are three different types of XSS: Reflected, Stored and DOM XSS. While they can achieve
+            similar results, their mechanisms are slightly different. Reflected XSS triggers 'immediately', as the data
+            received in the malicious HTTP request is returned in the next response. Stored XSS is triggered when
+            something else happens, for example, a user visits the page. This is because the payload is 'stored'
+            somewhere before being returned in a later response. Finally, DOM XSS works by having an untrusted source
+            connected to the DOM through an unsafe sink, which is a client-side (not server-side) vulnerability. Like
+            with stored XSS, there are many ways for a DOM XSS vulnerability to be 'triggered'.</p>
+
+        <h2>How can XSS Be Prevented?</h2>
+        <p>There are a few ways to prevent XSS. One way is to use a strong content security policy (CSP) which prevents
+            scripts from being executed unless it comes from a certain domain/the same source. You could also perform
+            user-input sanitation, using libraries like DOMPurify. Sometimes, blacklists/whitelists and encoding can be
+            used, though they are often weaker defences as there is a good chance of an attacker being able to bypass
+            the filters.</p>
+        <a href="/index.html">
+            <button class="button hover-button">Return to homepage</button>
+        </a>
+    </div>
+
+
+
+    <footer>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Check this out!</a>
+    </footer>
+</body>
+
+</html>
